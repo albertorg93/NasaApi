@@ -1,0 +1,15 @@
+#landingsbody {
+  background-color: burlywood;
+}
+
+.results{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+  font-size: 25px;
+}
+
+#tituloq{
+  max-width: 25%;
+}
+

@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/styles.css")
+        title Document
+    body#landingsbody
+        h1 Landings
+            each value,index in leer
+                div(class="results", id=`${leer[index].name}`)
+                    label(for='titulo') Nombre:
+                    input#tituloq(name='title' value=`${leer[index].name}`)
+                    label(for='titulo') id:
+                    input#tituloq(name='title' value=`${leer[index].id}`)
+                    label(for='titulo') nametype:
+                    input#tituloq(name='title' value=`${leer[index].nametype}`)
+                    label(for='titulo') recclass:
+                    input#tituloq(name='title' value=`${leer[index].recclass}`)
+                    label(for='titulo') mass:
+                    input#tituloq(name='title' value=`${leer[index].mass}`)
+                    label(for='titulo') fell:
+                    input#tituloq(name='title' value=`${leer[index].fall}`)
+                    label(for='titulo') year:
+                    input#tituloq(name='title' value=`${leer[index].year}`)
+                    label(for='titulo') reclat:
+                    input#tituloq(name='title' value=`${leer[index].reclat}`)
+                    label(for='titulo') reclong:
+                    input#tituloq(name='title' value=`${leer[index].reclong}`)
+        include ./footer.pug 
+        script(src='/js/main.js')
