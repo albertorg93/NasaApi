@@ -10,7 +10,7 @@ const hasApiKey = require('../middlewares/hasApiKey');
 
 router.get('/landings',landings.getMinimumMass);
 router.get('/landings/mass/:id',landings.getNameandMass);
-router.get('/landings/class/:id',landings.getNameandMass);
+router.get('/landings/class/:id',landings.getNameandClass);
 //router.get('/landings',landings.getNameandMass);
 
 // POST --> Create Landing
