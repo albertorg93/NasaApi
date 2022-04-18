@@ -1,9 +1,9 @@
-const db = require('../models/entry.js');
 const datoslandings = require('../models/data.js');
 
 
 const getMinimumMass = async (req,res) => {
     let massdata = req.query.minimum_mass
+    console.log(massdata)
     const leer = await datoslandings.find({mass: {$gte:massdata}},'name mass -_id')
     res.status(200).json(leer);
     

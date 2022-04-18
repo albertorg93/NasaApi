@@ -23,7 +23,7 @@ app.use(express.json()); // Para habilitar recepción de datos JSON en una reque
 
 
 // Rutas
-app.use("/api",entryRouter);// API
+app.use("/api/astronomy",entryRouter);// API
 
 // Middleware de rutas inexistentes
 app.use(notFound);
