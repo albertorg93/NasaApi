@@ -3,7 +3,7 @@ const express = require('express'); // Importando módulo NPM (libería)
 require('./utils/dbMongo.js'); // Abrir conexión a la BBDD Mongo
 require('dotenv').config()
 // Rutas
-const entryRouter = require('./routes/apiAstronomy');
+const entryRouter = require('./routes/landings');
 
 // Middlewares
 //const hasApiKey = require('./middlewares/hasApiKey');

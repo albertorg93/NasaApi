@@ -55,13 +55,22 @@ const createLanding = async (req,res) => {
     } catch(err){
         res.status(400).json({message:err});
     }
-   
   }
+
+  //function que elimina una landing dependiendo del id que le pasemos por el body
+  const deleteLanding = async (req,res) => {
+      value=req.body.id
+      console.log(value)
+      const response = await datoslandings.deleteOne({id: value})
+      res.status(201).send(`landing con id: "${value}" eliminada correctamente`)
+}
+
 
 const landings = {
     getByQuery,
     getNameandMass,
     getNameandClass,
-    createLanding
+    createLanding,
+    deleteLanding
 }
 module.exports = landings;

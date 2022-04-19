@@ -18,5 +18,7 @@ router.get('/landings/class/:id',landings.getNameandClass);
 router.post('/landings/create',landings.createLanding);
 
 
+// DELETE --> Delete Landing
+router.delete('/landings/delete',landings.deleteLanding);
 
 module.exports = router;
