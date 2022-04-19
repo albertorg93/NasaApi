@@ -15,7 +15,7 @@ router.get('/landings/class/:id',landings.getNameandClass);
 //router.get('/landings',landings.getNameandMass);
 
 // POST --> Create Landing
-router.post('/landings/mass/:id',landings.getNameandMass);
+router.post('/landings/create',landings.createLanding);
 
 
 

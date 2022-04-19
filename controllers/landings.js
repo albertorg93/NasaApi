@@ -44,10 +44,24 @@ const getNameandClass = async (req,res) => {
     res.status(200).json(leer);
     
 }
+//funcion que permite guardar una landing nueva mediante post
+const createLanding = async (req,res) => {
+    
+    const newLanding = new datoslandings(req.body); // {} nuevo producto a guardar
+    try{
+    const response = await newLanding.save();
+   // .json({message:`Película ${response.title} guardada en el sistema con ID: ${response.id}`})
+    res.status(201).send(`landing ${response.name} guardada correctamente`)
+    } catch(err){
+        res.status(400).json({message:err});
+    }
+   
+  }
 
 const landings = {
     getByQuery,
     getNameandMass,
-    getNameandClass
+    getNameandClass,
+    createLanding
 }
 module.exports = landings;
