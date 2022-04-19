@@ -8,19 +8,19 @@ const hasApiKey = require('../middlewares/hasApiKey');
 
 //router.get('/astronomy/landings',landings.getData);
 
-router.get('/landings',landings.getByQuery);
-router.get('/landings/mass/:id',landings.getNameandMass);
-router.get('/landings/class/:id',landings.getNameandClass);
+router.get('/',landings.getByQuery);
+router.get('/mass/:id',landings.getNameandMass);
+router.get('/class/:id',landings.getNameandClass);
 
 //router.get('/landings',landings.getNameandMass);
 
 // POST --> Create Landing
-router.post('/landings/create',landings.createLanding);
+router.post('/create',landings.createLanding);
 
 // PUT --> Edit Landing
-router.put('/landings/edit',landings.editLanding);
+router.put('/edit',landings.editLanding);
 
 // DELETE --> Delete Landing
-router.delete('/landings/delete',landings.deleteLanding);
+router.delete('/delete',landings.deleteLanding);
 
 module.exports = router;

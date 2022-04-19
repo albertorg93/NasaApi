@@ -3,7 +3,8 @@ const express = require('express'); // Importando módulo NPM (libería)
 require('./utils/dbMongo.js'); // Abrir conexión a la BBDD Mongo
 require('dotenv').config()
 // Rutas
-const entryRouter = require('./routes/landings');
+const landing = require('./routes/landings');
+const neas = require('./routes/neas');
 
 // Middlewares
 //const hasApiKey = require('./middlewares/hasApiKey');
@@ -23,7 +24,8 @@ app.use(express.json()); // Para habilitar recepción de datos JSON en una reque
 
 
 // Rutas
-app.use("/api/astronomy",entryRouter);// API
+app.use("/api/astronomy/landings",landing);// API
+app.use("/api/astronomy/neas",neas);// API
 
 // Middleware de rutas inexistentes
 app.use(notFound);
