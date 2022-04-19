@@ -8,9 +8,10 @@ const hasApiKey = require('../middlewares/hasApiKey');
 
 //router.get('/astronomy/landings',landings.getData);
 
-router.get('/landings',landings.getMinimumMass);
+router.get('/landings',landings.getByQuery);
 router.get('/landings/mass/:id',landings.getNameandMass);
 router.get('/landings/class/:id',landings.getNameandClass);
+
 //router.get('/landings',landings.getNameandMass);
 
 // POST --> Create Landing
