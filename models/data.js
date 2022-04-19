@@ -20,7 +20,7 @@ const objectSchema = {
         required: true 
     },
     mass: { 
-        type: String, 
+        type: Number, 
         required: true 
     },
     fall: { 

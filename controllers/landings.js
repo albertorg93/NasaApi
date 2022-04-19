@@ -67,8 +67,6 @@ const createLanding = async (req,res) => {
 
 
 
-
-
   //function que elimina una landing dependiendo del id que le pasemos por el body
   const deleteLanding = async (req,res) => {
       value=req.body.id
