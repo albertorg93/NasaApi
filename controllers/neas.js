@@ -13,8 +13,7 @@ const getByQuery = async (req,res) => {
     } else if(req.query.from && req.query.to){
         const timefrom = parseInt(req.query.from)
         const timeto = parseInt(req.query.to)
-        const leer = await datosNeas.find({})   //orbit_class: {$eq: classdata
-        //const leer = await datosNeas.find({discovery_date: {$gte: timefrom, $lte: timeto}},'designation discovery_date period_yr -_id')
+        const leer = await datosNeas.find({discovery_date: {$gte: timefrom, $lte: timeto}},'designation discovery_date period_yr -_id')
         res.status(200).json(leer);
 
     }
