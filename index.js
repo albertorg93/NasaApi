@@ -22,7 +22,7 @@ app.use(express.urlencoded())
 app.use(express.json()); // Para habilitar recepción de datos JSON en una request
 
 // app.use(hasApiKey); // Middleware - APIKEY para todas las rutas
-
+app.get("/",(req,res)=>res.status(200).json({message:"todo correcto"}))
 
 // Rutas
 app.use("/api/astronomy/landings",landing);// API
