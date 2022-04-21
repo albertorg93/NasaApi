@@ -12,7 +12,7 @@ const notFound = require('./middlewares/notFound');
 
 const app = express() // Inicializa el servidor. App es un bjeto que representa el server
 const port = process.env.PORT || 5000;
-console.log(port)
+
 
 // Motor de vistas PUG
 app.set('view engine', 'pug');
