@@ -5,6 +5,13 @@ const datoslandings = require('../models/data.js');
 const getByQuery = async (req,res) => {
 
     if(req.query.minimum_mass){
+        // const toNumber = async() => { 
+        //     await datoslandings.updateMany(
+        //          { 'mass' : { $type: 2 }},  
+        //         [{ $set: { 'mass': { $toDouble: '$mass' } } }] 
+        //         ) 
+        // } 
+        // toNumber()
         const massdata = parseInt(req.query.minimum_mass)
         const leer = await datoslandings.find({mass: {$gte:massdata}},'name mass -_id')
         res.status(200).json(leer);

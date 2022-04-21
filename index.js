@@ -11,7 +11,7 @@ const neas = require('./routes/neas');
 const notFound = require('./middlewares/notFound');
 
 const app = express() // Inicializa el servidor. App es un bjeto que representa el server
-const port = process.env.PORT
+const port = process.env.PORT || 5000;
 
 // Motor de vistas PUG
 app.set('view engine', 'pug');
