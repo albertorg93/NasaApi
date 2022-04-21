@@ -60,7 +60,6 @@ const createLanding = async (req,res) => {
  //function que elimina una landing dependiendo del id que le pasemos por el body
  const editLanding = async (req,res) => {
     value=req.body.id
-    console.log(value)
     const response = await datoslandings.findOneAndUpdate({id: value}, req.body)
     res.status(201).send(`landing con id: "${value}" editada correctamente`)
 }
@@ -70,7 +69,6 @@ const createLanding = async (req,res) => {
   //function que elimina una landing dependiendo del id que le pasemos por el body
   const deleteLanding = async (req,res) => {
       value=req.body.id
-      console.log(value)
       const response = await datoslandings.deleteOne({id: value})
       res.status(201).send(`landing con id: "${value}" eliminada correctamente`)
 }

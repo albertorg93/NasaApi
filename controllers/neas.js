@@ -1,13 +1,13 @@
 const datosNeas = require('../models/neas.js');
 
 
-// Obtiene nombre y masa de todos aquellos meteoritos cuya masa sea igual o superior a una masa (gr) dada (con query parameters)​
+// Obtiene la informacion requerida de los neas, dependiendo si le pasamos por query params: class, from o to
 const getByQuery = async (req,res) => {
 
     if(req.query.class){
         const classdata = req.query.class
         console.log(classdata)
-        const leer = await datosNeas.find({orbit_class: {$eq: classdata}}, 'designation period_yr orbit_class -_id')  //{orbit_class: {$gte:classdata}},'name mass -_id'
+        const leer = await datosNeas.find({orbit_class: {$eq: classdata}}, 'designation period_yr orbit_class -_id') 
         res.status(200).json(leer);
 
     } else if(req.query.from && req.query.to){
@@ -33,13 +33,12 @@ const getByQuery = async (req,res) => {
     
 }
 
-//funcion que permite guardar una landing nueva mediante post
+//funcion que permite guardar una neas nueva mediante post
 const createNeas = async (req,res) => {
     
-    const newNeas = new datosNeas(req.body); // {} nuevo producto a guardar
+    const newNeas = new datosNeas(req.body);
     try{
     const response = await newNeas.save();
-   // .json({message:`Película ${response.title} guardada en el sistema con ID: ${response.id}`})
     res.status(201).send(`Neas ${response.orbit_class} guardada correctamente`)
     } catch(err){
         res.status(400).json({message:err});
@@ -66,7 +65,7 @@ const createNeas = async (req,res) => {
 
 
 const landings = {
-    getByQuery,
+     getByQuery,
      createNeas,
      editNeas,
      deleteNeas
